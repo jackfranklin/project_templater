@@ -1,6 +1,6 @@
 require_relative "./generator.rb"
 
-class JSProject < Generator
+class JsProject < Generator
   def run
     make_file("package.json")
     make_file("README.md")
