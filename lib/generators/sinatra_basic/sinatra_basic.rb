@@ -1,6 +1,7 @@
 require_relative "../../generators/generator.rb"
+
 class SinatraBasic < Generator
   def run
-    puts 'hello'
+    make_file("app.rb")
   end
 end

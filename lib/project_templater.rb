@@ -15,9 +15,11 @@ class ProjectTemplater
     require "generators/#{@template}/#{@template}.rb"
   end
 
-  def run
+  def run(base_dir)
+    base_dir = Dir.pwd + "/" + base_dir
     class_name = @template.camel_case
-    instance = Object::const_get(class_name).new.run
+    instance = Object::const_get(class_name).new(base_dir)
+    instance.run
   end
 end
 
