@@ -12,7 +12,7 @@ class ProjectTemplater
   def initialize(template)
     @template = template
     # load in the right generator
-    require "generators/#{@template}/#{@template}.rb"
+    require "generators/#{@template}.rb"
   end
 
   def run(base_dir)

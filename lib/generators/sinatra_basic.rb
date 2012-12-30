@@ -1,4 +1,4 @@
-require_relative "../../generators/generator.rb"
+require_relative "./generator.rb"
 
 class SinatraBasic < Generator
   def run
