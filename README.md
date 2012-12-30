@@ -1,5 +1,8 @@
 # Project Templater
 
+__NOTE__
+This is currently a WIP and is not yet released.
+
 ## Installation
 
 ```
@@ -31,6 +34,9 @@ project_templater sinatra_basic foo/
 ```
 
 Run the `sinatra_basic` generator and output to the `pwd/foo/ directory`.
+
+## Available Generators
+- `sinatra_basic`
 
 
 ## Adding a Generator
