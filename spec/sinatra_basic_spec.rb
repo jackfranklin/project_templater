@@ -3,7 +3,7 @@ require "shell/executer.rb"
 require "fileutils"
 
 describe ProjectTemplater do
-  after(:each) do
+  after(:all) do
     FileUtils.rm_r("spec/TEST")
     FileUtils.mkdir("spec/TEST")
   end
@@ -16,6 +16,12 @@ describe ProjectTemplater do
 
     it "creates an app.rb file" do
       expect(Shell.execute("cat spec/TEST/app.rb").success?).to eq(true)
+    end
+
+    it "creates a config.ru file" do
+      res = Shell.execute("cat spec/TEST/config.ru").stdout.split("\n")
+      expect(res.first).to eq("require './app'")
+      expect(res.last).to eq("run Sinatra::Application")
     end
   end
 end
