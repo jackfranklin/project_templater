@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+
+require "project_templater"
+
+template = ARGV[0]
+
+pt = ProjectTemplater.new(template)
+pt.run
