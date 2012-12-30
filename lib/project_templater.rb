@@ -7,11 +7,12 @@ end
 
 
 require "generators/generator.rb"
-require "generators/sinatra_basic/sinatra_basic.rb"
 
 class ProjectTemplater
   def initialize(template)
     @template = template
+    # load in the right generator
+    require "generators/#{@template}/#{@template}.rb"
   end
 
   def run
