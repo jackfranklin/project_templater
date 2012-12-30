@@ -24,5 +24,6 @@ class SinatraBasic < Generator
 
   def post_install
     `cd #{@base} && git init && bundle`
+    `cd #{@base}/public/js && nodefetch jquery`
   end
 end

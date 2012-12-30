@@ -1,7 +1,6 @@
 # Project Templater
 
-__NOTE__
-This is currently a WIP and is not yet released.
+__V0.1.0__
 
 ## Installation
 
@@ -9,7 +8,7 @@ This is currently a WIP and is not yet released.
 gem install project_templater
 ```
 
-Adds `project_templater` executable.
+Adds the `project_templater` executable.
 
 ## Usage
 
@@ -37,7 +36,8 @@ Run the `sinatra_basic` generator and output to the `pwd/foo/ directory`.
 
 ## Available Generators
 - `sinatra_basic`
-
+- `js_project`
+- `ruby_project`
 
 ## Adding a Generator
 
@@ -45,32 +45,14 @@ These exist within `lib/generators`. Create a new `.rb` file. The class must ext
 
 You have two methods available to you, `make_file` and `make_dir`.
 
-The best way to do it is to copy an existing one. For example, here's `lib/generators/sinatra_basic.rb`:
+The best way to do it is to copy an existing one - they are all in `lib/generators`.
 
-```
-require_relative "./generator.rb"
+Define a `run` method that will be called. There are two methods available:
 
-class SinatraBasic < Generator
-  def run
-    make_file("Gemfile") {
-      "source 'http://rubygems.org'\ngem 'sinatra'"
-    }
-    make_file("app.rb") {
-      "require 'sinatra'"
-    }
-    make_file("config.ru") {
-      "require './app'\nrun Sinatra::Application"
-    }
-    make_dir("public")
-    make_dir("public/css")
-    make_dir("public/js")
-    make_file("public/css/style.css")
-    make_file("public/js/app.js")
-  end
-end
-```
+- `make_file` can be called with just the file to create, and optionally a block. Whatever is returned from the block is then stored as the contents of the file.
+- `make_dir` will create a new directory.
 
-`make_file` can be called with just the file to create, and optionally a block. Whatever is returned from the block is then stored as the contents of the file.
+You can also define a `post_install` method that is run after the `run` method has. You also have access to the `@base` variable, which is the directory the generator was run in.
 
 
 
