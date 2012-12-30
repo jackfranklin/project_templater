@@ -8,6 +8,9 @@ class Generator
     end
   end
 
+  def post_install
+  end
+
   def make_file(path, &block)
     contents = ""
     contents = block.call if block_given?
