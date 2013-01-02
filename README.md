@@ -54,5 +54,13 @@ Define a `run` method that will be called. There are two methods available:
 
 You can also define a `post_install` method that is run after the `run` method has. You also have access to the `@base` variable, which is the directory the generator was run in.
 
+## Changelog
+
+__0.1.1__
+- updated `ruby_basic` generator so it creates a couple more folders
+
+__0.1.0__
+- initial release
+
 
 
