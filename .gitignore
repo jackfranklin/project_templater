@@ -1,3 +1,4 @@
 *.gem
 filefixtures.rb
 spec/TEST/
+.DS_Store
