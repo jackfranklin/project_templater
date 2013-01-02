@@ -9,10 +9,13 @@ class RubyProject < Generator
       "--color"
     }
     make_file(".gitignore")
+    make_dir("lib")
     make_dir("spec")
+    make_dir("spec/unit")
+    make_dir("spec/integration")
   end
 
   def post_install
-    `cd #{@base} && git init && bundle`
+    puts `cd #{@base} && git init && bundle`
   end
 end
