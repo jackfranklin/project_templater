@@ -60,6 +60,9 @@ Similarly, there is a `pre_install` method which is run just before `run`. Again
 
 ## Changelog
 
+__0.2.1__
+- release date within gemspec was incorrect.
+
 __0.2.0__
 - added `jekyll_basic` generator
 - add `pre_install` method for generators
