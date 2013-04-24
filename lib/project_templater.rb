@@ -19,7 +19,7 @@ class ProjectTemplater
     base_dir = Dir.pwd + "/" + (base_dir ||= "")
     class_name = @template.camel_case
     instance = Object::const_get(class_name).new(base_dir)
-    install.pre_install
+    instance.pre_install
     instance.run
     instance.post_install
   end
