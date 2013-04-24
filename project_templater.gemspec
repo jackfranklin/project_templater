@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'project_templater'
-  s.version     = '0.2.0'
+  s.version     = '0.2.1'
   s.executables << 'project_templater'
   s.date        = '2013-04-24'
   s.summary     = "Project Templating"
