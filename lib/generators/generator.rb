@@ -8,6 +8,10 @@ class Generator
     end
   end
 
+  def pre_install
+
+  end
+
   def post_install
   end
 
