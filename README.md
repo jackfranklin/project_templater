@@ -1,6 +1,6 @@
 # Project Templater
 
-__V0.1.2__
+__V0.2.0__
 
 ## Installation
 
@@ -39,6 +39,7 @@ Run the `sinatra_basic` generator and output to the `pwd/foo/ directory`.
 - `js_project`
 - `ruby_project`
 - `html_proto`
+- `jekyll_basic`
 
 ## Adding a Generator
 
@@ -55,7 +56,13 @@ Define a `run` method that will be called. There are two methods available:
 
 You can also define a `post_install` method that is run after the `run` method has. You also have access to the `@base` variable, which is the directory the generator was run in.
 
+Similarly, there is a `pre_install` method which is run just before `run`. Again, it has access to `@base`.
+
 ## Changelog
+
+__0.2.0__
+- added `jekyll_basic` generator
+- add `pre_install` method for generators
 
 __0.1.2__
 - added `html_proto` generator, designed for quick HTML prototypes
