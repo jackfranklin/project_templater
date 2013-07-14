@@ -1,6 +1,6 @@
 # Project Templater
 
-__V0.3.1__
+__V0.3.2__
 
 ## Installation
 
