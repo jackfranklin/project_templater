@@ -1,6 +1,6 @@
 # Project Templater
 
-__V0.3.0__
+__V0.3.1__
 
 ## Installation
 
@@ -59,6 +59,9 @@ You can also define a `post_install` method that is run after the `run` method h
 Similarly, there is a `pre_install` method which is run just before `run`. Again, it has access to `@base`.
 
 ## Changelog
+
+__0.3.1__
+- No nasty exception if the generator doesn't exist.
 
 __0.3.0__
 - Remove all references to `nodefetch`
