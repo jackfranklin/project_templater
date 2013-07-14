@@ -41,6 +41,6 @@ end
   end
 
   def post_install
-    `cd #{@base} && git init && bundle`
+    puts `cd #{@base} && git init && bundle`
   end
 end

@@ -12,11 +12,7 @@ class ProjectTemplater
   def initialize(template)
     @template = template
     # load in the right generator
-    if generator_exists?
-      require "generators/#{@template}.rb"
-    else
-      puts "That generator doesn't exist."
-    end
+    puts "That generator doesn't exist." unless generator_exists?
   end
 
   def valid?
@@ -35,7 +31,12 @@ class ProjectTemplater
   private
 
   def generator_exists?
-    File.exist?("generators/#{@template}.rb")
+    begin
+      require "generators/#{@template}.rb"
+      true
+    rescue Exception
+      false
+    end
   end
 end
 
