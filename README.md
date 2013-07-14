@@ -1,6 +1,6 @@
 # Project Templater
 
-__V0.2.0__
+__V0.3.0__
 
 ## Installation
 
@@ -59,6 +59,10 @@ You can also define a `post_install` method that is run after the `run` method h
 Similarly, there is a `pre_install` method which is run just before `run`. Again, it has access to `@base`.
 
 ## Changelog
+
+__0.3.0__
+- Remove all references to `nodefetch`
+- Fix Sinatra generator. Makes views directory in right place and now sets up layout.erb properly.
 
 __0.2.1__
 - release date within gemspec was incorrect.

@@ -7,7 +7,6 @@ class JsProject < Generator
     make_dir("test")
     make_dir("src")
     make_dir("demo")
-
   end
 
   def post_install

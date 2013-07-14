@@ -6,8 +6,15 @@ class SinatraBasic < Generator
       "source 'http://rubygems.org'\ngem 'sinatra'"
     }
     make_file("app.rb") {
-      "require 'sinatra'"
+%Q|
+require 'sinatra'
+
+get '/' do
+  erb :index
+end
+|
     }
+
     make_file("config.ru") {
       "require './app'\nrun Sinatra::Application"
     }
@@ -16,14 +23,24 @@ class SinatraBasic < Generator
     make_dir("public")
     make_dir("public/css")
     make_dir("public/js")
-    make_dir("public/views")
+    make_dir("views")
+    make_file("views/layout.erb") {
+%Q|<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%= yield %>
+</body>
+</html> |
+    }
+    make_file("views/index.erb") { "Hello World" }
     make_file("public/css/style.css")
-    make_file("public/js/app.js")
-    make_file("public/views/layout.erb")
   end
 
   def post_install
     `cd #{@base} && git init && bundle`
-    `cd #{@base}/public/js && nodefetch jquery`
   end
 end
