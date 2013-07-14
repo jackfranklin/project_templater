@@ -62,6 +62,8 @@ Similarly, there is a `pre_install` method which is run just before `run`. Again
 
 __0.3.1__
 - No nasty exception if the generator doesn't exist.
+- run `project_templater` without arguments to see a list of available generators
+- `post_install` command line output is now shown
 
 __0.3.0__
 - Remove all references to `nodefetch`
