@@ -60,6 +60,9 @@ Similarly, there is a `pre_install` method which is run just before `run`. Again
 
 ## Changelog
 
+__0.3.2__
+- logs to the terminal when it creates a file or folder
+
 __0.3.1__
 - No nasty exception if the generator doesn't exist.
 - run `project_templater` without arguments to see a list of available generators

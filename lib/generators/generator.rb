@@ -9,7 +9,6 @@ class Generator
   end
 
   def pre_install
-
   end
 
   def post_install
@@ -18,10 +17,12 @@ class Generator
   def make_file(path, &block)
     contents = ""
     contents = block.call if block_given?
+    puts "Writing file: #{@base + path}"
     File.open(@base + path, 'w') {|f| f.write(contents) }
   end
 
   def make_dir(path)
+    puts "Writing folder: #{@base + path}"
     FileUtils.mkdir_p(@base + path)
   end
 end
