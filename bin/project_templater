@@ -7,4 +7,4 @@ template = ARGV[0]
 base_dir = ARGV[1]
 
 pt = ProjectTemplater.new(template)
-pt.run(base_dir)
+pt.run(base_dir) if pt.valid?

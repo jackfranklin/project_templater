@@ -12,7 +12,15 @@ class ProjectTemplater
   def initialize(template)
     @template = template
     # load in the right generator
-    require "generators/#{@template}.rb"
+    if generator_exists?
+      require "generators/#{@template}.rb"
+    else
+      puts "That generator doesn't exist."
+    end
+  end
+
+  def valid?
+    generator_exists?
   end
 
   def run(base_dir)
@@ -22,6 +30,12 @@ class ProjectTemplater
     instance.pre_install
     instance.run
     instance.post_install
+  end
+
+  private
+
+  def generator_exists?
+    File.exist?("generators/#{@template}.rb")
   end
 end
 
