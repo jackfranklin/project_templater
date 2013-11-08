@@ -8,11 +8,9 @@ base_dir = ARGV[1]
 
 if template.nil?
   puts "Available Templates"
-  # TODO: programmatically get this list
-  %w{html_proto jekyll_basic js_project ruby_project sinatra_basic}.each do |t|
-    puts "-> #{t}"
+  ProjectTemplater.generators.each do |g|
+    puts "-> #{g}"
   end
-
 else
   pt = ProjectTemplater.new(template)
   pt.run(base_dir) if pt.valid?

@@ -11,12 +11,18 @@ require "generators/generator.rb"
 class ProjectTemplater
   def initialize(template)
     @template = template
-    # load in the right generator
     puts "That generator doesn't exist." unless generator_exists?
   end
 
   def valid?
     generator_exists?
+  end
+
+  def self.generators
+    Dir["lib/generators/*.rb"]
+      .map { |g| g.split("/").last }
+      .map { |g| g.gsub(".rb", "") }
+      .select { |g| g != "generator" }
   end
 
   def run(base_dir)
