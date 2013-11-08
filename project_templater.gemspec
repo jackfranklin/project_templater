@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.name        = 'project_templater'
   s.version     = '0.3.3'
   s.executables << 'project_templater'
-  s.date        = '2013-07-14'
+  s.date        = '2013-11-08'
   s.summary     = "Project Templating"
   s.description = "A gem for creating file and folder structures."
   s.authors     = ["Jack Franklin"]
