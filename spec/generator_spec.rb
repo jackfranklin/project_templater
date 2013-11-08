@@ -1,9 +1,12 @@
 require_relative "../lib/generators/generator.rb"
 require "shell/executer.rb"
 describe Generator do
+  before(:all) do
+    FileUtils.mkdir_p("spec/TEST")
+  end
+
   after(:all) do
     FileUtils.rm_r("spec/TEST/")
-    FileUtils.mkdir("spec/TEST")
   end
 
   let(:g) { Generator.new("spec/TEST") }
