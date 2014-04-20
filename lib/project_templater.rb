@@ -19,7 +19,7 @@ class ProjectTemplater
   end
 
   def self.generators
-    Dir["lib/generators/*.rb"]
+    Dir["#{File.dirname(__FILE__)}/generators/*.rb"]
       .map { |g| g.split("/").last }
       .map { |g| g.gsub(".rb", "") }
       .select { |g| g != "generator" }
