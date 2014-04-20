@@ -1,6 +1,6 @@
 # Project Templater
 
-__V0.3.3__
+__V0.3.4__
 
 ## Installation
 
@@ -59,6 +59,9 @@ You can also define a `post_install` method that is run after the `run` method h
 Similarly, there is a `pre_install` method which is run just before `run`. Again, it has access to `@base`.
 
 ## Changelog
+
+__0.3.4__
+- fix bug of not showing available templates
 
 __0.3.3__
 - tidy up some internal code
